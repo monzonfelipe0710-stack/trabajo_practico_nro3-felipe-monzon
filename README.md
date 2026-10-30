@@ -34,7 +34,8 @@ src/
     usePermiso.ts
   lib/
     reportes.ts
-``
+RESPUESTAS.md
+```
 
 ## Permisos
 
@@ -45,12 +46,12 @@ src/
 | Notificaciones | expo-notifications | Al activar el interruptor | Bandeja interna /avisos |
 | Fotos | expo-image-picker | No se pide permiso de galería; abre el selector del sistema | Adjuntar más tarde |
 
-## Configuración de permisos
+## Configuración
 
 El bloque `expo.plugins` de `app.json` configura los textos de cámara y ubicación. En cámara se desactiva el micrófono con `microphonePermission: false` y `recordAudioAndroid: false`. Se bloquean `SYSTEM_ALERT_WINDOW`, `READ_MEDIA_IMAGES`, `READ_MEDIA_VIDEO` y `RECORD_AUDIO`: la app no necesita ventanas superpuestas, acceso amplio a la galería ni audio.
 
 Los permisos se declaran en `app.json`; los archivos nativos generados no deben editarse manualmente porque Expo los regenera.
 
-## Pruebas pendientes en dispositivo
+## Alcance y pruebas
 
-La implementación debe verificarse en Expo Go y en una development build Android o iOS. Antes de entregar, agregar capturas reales del escáner en sus cuatro estados, ubicación concedida/denegada, selector de fotos, notificación y panel antes/después de volver de Ajustes. No se incluyen capturas inventadas.
+La app es una demostración local sencilla. Los reportes y avisos se guardan en memoria y se pierden al cerrar la app; no hay backend ni persistencia. La ubicación y la cámara necesitan probarse en dispositivo. Antes de entregar, agregar capturas reales del escáner en sus cuatro estados, ubicación concedida/denegada, selector de fotos, notificación y panel antes/después de volver de Ajustes. No se incluyen capturas inventadas.
